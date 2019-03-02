@@ -41,7 +41,8 @@ class WandCommand extends WECommand{
 				'Right click a block to set the position 2 of a selection',
 				'Use //togglewand to toggle it\'s functionality'
 			]);
-			$item->setNamedTagEntry(new CompoundTag("MagicWE", []));
+		
+			$item->getNamedTag()->setTag(new CompoundTag("MagicWE", []));
 			$sender->getInventory()->addItem($item);
 		} catch (\Exception $error){
 			$sender->sendMessage(Loader::$prefix . TextFormat::RED . "Looks like you are missing an argument or used the command wrong!");
